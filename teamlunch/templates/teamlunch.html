@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'teamlunch/style.css' %}">
+</head>
+
+<body>
+{% include "navbar.html" %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Welcome to the Lunch Team Generator</h1>
+                <p>
+                    This tool can be used to generate a randomized list of teams for team lunch.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <form action="/teamlunch/" method="post">
+            {% csrf_token %}
+            <div class="row label-row">
+                <div class="col-xs-4">
+                    {{ lunch_form.primary_team.errors }}
+                    {{ lunch_form.primary_team.label_tag }}
+                </div>
+                <div class="col-xs-4">
+                    {{ lunch_form.guest_team.errors }}
+                    {{ lunch_form.guest_team.label_tag }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4">
+                    {{ lunch_form.primary_team }}
+                </div>
+                <div class="col-xs-4">
+                    {{ lunch_form.guest_team }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-1">
+                    <input class="button" type="submit" name="submit" value="submit" onclick="">
+                </div>
+                <div class="col-xs-1">
+                    <input class="button" type="reset" value="clear form" onclick="location='/teamlunch/'">
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

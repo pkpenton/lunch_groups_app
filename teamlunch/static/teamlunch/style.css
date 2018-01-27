@@ -1,0 +1,56 @@
+body {
+    font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding-top: 70px;
+}
+
+.row {
+    padding-bottom: 30px;
+}
+
+.label-row {
+    padding-bottom: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.navbar {
+    background-color: #dfdce3;
+    border-bottom: 1px solid #a4a4a4;
+}
+
+.navbar-default .navbar-name {
+    color: #76323f;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    padding-top: 12px;
+    font-weight: 500;
+}
+
+h1 {
+    font-weight: 300;
+    color: #76323f;
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 300;
+    color: #76323f;
+}
+
+p {
+    font-size: 16px;
+}
+
+.button {
+    border: 2px solid #76323f;
+    font-size: 16px;
+    font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #76323f;
+    background-color: #FFF;
+}
+
+.button:hover {
+    background-color: #76323f;
+    color: #FFF;
+}
