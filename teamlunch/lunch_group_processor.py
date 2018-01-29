@@ -29,6 +29,8 @@ def split_into_groups(randomized_primary_team, randomized_guest_team):
         group_size = 8
     elif total_attendees % 9 == 0:
         group_size = 9
+    else:
+        group_size = 6
 
     chunked_list = fn.chunks(group_size, randomized_primary_team)
 
