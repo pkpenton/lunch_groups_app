@@ -16,9 +16,20 @@ def randomize_team(cleaned_team_list):
 
 
 def split_into_groups(randomized_primary_team, randomized_guest_team):
-    number_of_groups = len(randomized_guest_team)
-    total_attendees = (len(randomized_primary_team) + len(randomized_guest_team))
-    group_size = (total_attendees / number_of_groups) - 1
+    # TODO: this is fucked, make two lists and concat them together instead
+    total_attendees = len(randomized_primary_team) + len(randomized_guest_team)
+
+    if total_attendees % 5 == 0:
+        group_size = 5
+    elif total_attendees % 6 == 0:
+        group_size = 6
+    elif total_attendees % 7 == 0:
+        group_size = 7
+    elif total_attendees % 8 == 0:
+        group_size = 8
+    elif total_attendees % 9 == 0:
+        group_size = 9
+
     chunked_list = fn.chunks(group_size, randomized_primary_team)
 
     for i in range(len(randomized_guest_team)):
@@ -34,6 +45,7 @@ def split_into_groups(randomized_primary_team, randomized_guest_team):
 
 
 def main():
+    # primary_team and guest_team are declared by the user upon form submission
     randomized_primary_team = randomize_team(clean_lists(primary_team))
     randomized_guest_team = randomize_team(clean_lists(guest_team))
 

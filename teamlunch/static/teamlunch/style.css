@@ -48,6 +48,7 @@ p {
     font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #76323f;
     background-color: #FFF;
+    border-radius: 20px;
 }
 
 .button:hover {
